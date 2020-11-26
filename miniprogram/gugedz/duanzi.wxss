@@ -1,0 +1,56 @@
+/* miniprogram/gugedz/duanzi.wxss */
+
+.listItem {
+  width: 750rpx;
+  border-bottom: 10rpx solid #ccc;
+  padding-bottom: 12rpx;
+}
+.listItem .itemHeader {
+  display: flex;
+  align-items: center;
+}
+/* 头像样式 */
+.listItem .headerimg image {
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 32rpx;
+  margin: 25rpx;
+}
+.listItem .itemHeader .text {
+  /* display: flex; */
+  align-items: center;
+}
+.listItem .itemHeader .username {
+  font-size: 35rpx;
+  padding-right: 20rpx;
+}
+.listItem .itemHeader .time {
+  font-size: 30rpx;
+  padding-right: 20rpx;
+  color: #bbb;
+}
+
+/* 段子内容样式 */
+.listItem .itemContent {
+  padding: 0 25rpx 25rpx;
+  font-size: 38rpx;
+}
+/* 段子下方的互动功能样式 */
+.itemFooter {
+  display: flex;
+  align-items: center;
+}
+.itemFooter>view {
+  text-align: center;
+  flex: 1;
+}
+.itemFooter>view image {
+  width: 28rpx;
+  height: 28rpx;
+  padding-right: 10rpx;
+}
+.itemFooter>view text {
+  opacity: .8;
+  font-size: 30rpx;
+  color: #8f8f95;
+}

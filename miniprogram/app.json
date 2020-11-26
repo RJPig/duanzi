@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "gugedz/duanzi",
+    "gugedz/image",
+    "gugedz/video"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "咕鸽段子",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "gugedz/duanzi",
+        "text": "段子",
+        "iconPath": "images/dz1.png",
+        "selectedIconPath": "images/dz2.png"
+      },
+      {
+        "pagePath": "gugedz/image",
+        "text": "图片",
+        "iconPath": "images/ig1.png",
+        "selectedIconPath": "images/ig2.png"
+      },
+      {
+        "pagePath": "gugedz/video",
+        "text": "视频",
+        "iconPath": "images/vi1.png",
+        "selectedIconPath": "images/vi2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
