@@ -15,16 +15,16 @@ Page({
   onLoad: function (options) {
     let that = this
     wx.cloud.callFunction({
-      name: "duanzi",
+      name: "image",
       data: {
         page: 1,
         count: 10,
-        type: "image"
+        format: "image"
       },
       success(res) {
         console.log(res);
         that.setData({
-          dzlist:res.result.result
+          dzlist:res.result.items
         })
       }
     }
@@ -86,15 +86,15 @@ Page({
   getDz(page) {
     let that = this
     wx.cloud.callFunction({
-      name: "duanzi",
+      name: "image",
       data: {
         page: page,
         count: 10,
-        type: "image"
+        format: "image"
       },
       success(res) {
         // console.log(res);
-        let arr = that.data.dzlist.concat(res.result.result)
+        let arr = that.data.dzlist.concat(res.result.items)
         // console.log(arr);
         
         that.setData({

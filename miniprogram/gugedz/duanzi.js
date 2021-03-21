@@ -19,12 +19,12 @@ Page({
       data: {
         page: 1,
         count: 10,
-        type: "text"
+        format: "word"
       },
       success(res) {
         console.log(res);
         that.setData({
-          dzlist:res.result.result
+          dzlist:res.result.items
         })
       }
     }
@@ -70,6 +70,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function (event) {
+    console.log(event);
     this.setData({
       currentPage: this.data.currentPage+1
     })
@@ -82,7 +83,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 封装函数
+  // 封装函数,当页面上拉触底时调用该函数
   getDz(page) {
     let that = this
     wx.cloud.callFunction({
@@ -90,12 +91,12 @@ Page({
       data: {
         page: page,
         count: 10,
-        type: "text"
+        format: "word"
       },
       success(res) {
         // console.log(res);
-        let arr = that.data.dzlist.concat(res.result.result)
-        // console.log(arr);
+        let arr = that.data.dzlist.concat(res.result.items)
+        console.log(arr);
         
         that.setData({
           dzlist: arr

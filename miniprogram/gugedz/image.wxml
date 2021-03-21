@@ -3,32 +3,32 @@
     <view class="listItem" wx:for="{{dzlist}}" wx:key="index" data-id="{{item.sid}}" data-uid="item.uid">
       <view class="itemHeader">
         <view class="headerimg">
-          <image src="{{item.header}}"></image>
+          <image src="{{item.user.thumb}}"></image>
         </view>
         <view class="text">
-          <view class="username">{{item.name}}</view>
-          <view class="time">{{item.passtime}}</view>
+          <view class="username">{{item.user.login}}</view>
+          <!-- <view class="time">{{item.passtime}}</view> -->
         </view>
       </view>
       <view class="itemContent">
-        <view class="itemtext">{{item.text}}</view>
-        <image mode="widthFix" src="{{item.images}}"></image>
+        <view class="itemtext">{{item.content}}</view>
+        <image mode="widthFix" src="{{item.origin_url}}"></image>
       </view>
       
       <view class="itemFooter">
-        <view class="dz">
+        <view class="vote_up">
           <image src="../images/yes.png"></image>
-          <text>{{item.up}}</text>
+          <text>{{item.votes.up}}</text>
         </view>
 
-        <view class="zf">
+        <!-- <view class="zf">
           <image src="../images/zf.png"></image>
           <text>{{item.down}}</text>
 
-        </view>
-        <view class="pl">
-          <image src="../images/pl.png"></image>
-          <text>{{item.comment}}</text>
+        </view> -->
+        <view class="vote_down">
+          <image src="../images/no.png"></image>
+          <text>{{-item.votes.down}}</text>
 
         </view>
       </view>

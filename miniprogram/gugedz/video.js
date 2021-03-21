@@ -15,16 +15,16 @@ Page({
   onLoad: function (options) {
     let that = this
     wx.cloud.callFunction({
-      name: "duanzi",
+      name: "video",
       data: {
         page: 1,
         count: 10,
-        type: "video"
+        format: "video"
       },
       success(res) {
         console.log(res);
         that.setData({
-          dzlist:res.result.result
+          dzlist:res.result.items
         })
       }
     }
@@ -86,11 +86,11 @@ Page({
   getDz(page) {
     let that = this
     wx.cloud.callFunction({
-      name: "duanzi",
+      name: "video",
       data: {
         page: page,
         count: 10,
-        type: "video"
+        format: "video"
       },
       success(res) {
         // console.log(res);
