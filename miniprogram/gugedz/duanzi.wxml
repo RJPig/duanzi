@@ -17,11 +17,11 @@
           <text>{{item.votes.up}}</text>
         </view>
 
-        <!-- <view class="zf">
+        <view class="zf">
           <image src="../images/zf.png"></image>
-          <text>{{item.down}}</text>
+          <text>{{item.share_count}}</text>
 
-        </view> -->
+        </view>
         <view class="vote_down">
           <image src="../images/no.png"></image>
           <text>{{-item.votes.down}}</text>

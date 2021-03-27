@@ -18,8 +18,8 @@ Page({
       name: "image",
       data: {
         page: 1,
-        count: 10,
-        format: "image"
+        count: 12,
+        // format: "image"
       },
       success(res) {
         console.log(res);
@@ -89,11 +89,11 @@ Page({
       name: "image",
       data: {
         page: page,
-        count: 10,
-        format: "image"
+        count: 12,
+        // format: "image"
       },
       success(res) {
-        // console.log(res);
+        console.log(res);
         let arr = that.data.dzlist.concat(res.result.items)
         // console.log(arr);
         

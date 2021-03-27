@@ -39,14 +39,19 @@
   padding-bottom: 20rpx;
 }
 .listItem .itemContent image {
-  padding-bottom: 20rpx;
+  /* padding-bottom: 20rpx; */
+  border-radius: 5%;
   width: 100%;
+  /* height: 250px;
+  width: 250px; */
 }
 .listItem .itemContent {
   padding: 0 25rpx 25rpx;
   font-size: 38rpx;
 }
-
+/* .listItem .itemContent .img {
+  text-align: center;
+} */
 /* 段子下方的互动功能样式 */
 .itemFooter {
   display: flex;

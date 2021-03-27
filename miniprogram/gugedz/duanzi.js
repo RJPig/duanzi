@@ -18,11 +18,11 @@ Page({
       name: "duanzi",
       data: {
         page: 1,
-        count: 10,
-        format: "word"
+        count: 12,
+        // format: "word"
       },
       success(res) {
-        console.log(res);
+        console.log(res.result.items);
         that.setData({
           dzlist:res.result.items
         })
@@ -70,7 +70,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function (event) {
-    console.log(event);
+    // console.log(event);
     this.setData({
       currentPage: this.data.currentPage+1
     })
@@ -90,13 +90,13 @@ Page({
       name: "duanzi",
       data: {
         page: page,
-        count: 10,
-        format: "word"
+        count: 12,
+        // format: "word"
       },
       success(res) {
-        // console.log(res);
+        console.log(res.result.items);
         let arr = that.data.dzlist.concat(res.result.items)
-        console.log(arr);
+        // console.log(arr);
         
         that.setData({
           dzlist: arr

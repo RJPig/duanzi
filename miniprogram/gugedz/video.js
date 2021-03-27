@@ -18,11 +18,11 @@ Page({
       name: "video",
       data: {
         page: 1,
-        count: 10,
-        format: "video"
+        count: 12,
+        // format: "video"
       },
       success(res) {
-        console.log(res);
+        // console.log(res);
         that.setData({
           dzlist:res.result.items
         })
@@ -89,12 +89,12 @@ Page({
       name: "video",
       data: {
         page: page,
-        count: 10,
-        format: "video"
+        count: 12,
+        // format: "video"
       },
       success(res) {
         // console.log(res);
-        let arr = that.data.dzlist.concat(res.result.result)
+        let arr = that.data.dzlist.concat(res.result.items)
         // console.log(arr);
         
         that.setData({

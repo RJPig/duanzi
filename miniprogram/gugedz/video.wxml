@@ -5,26 +5,29 @@
         <view class="headerimg">
           <image src="{{item.user.thumb}}"></image>
         </view>
+        <!-- 用户头像部分 -->
         <view class="text">
           <view class="username">{{item.user.login}}</view>
           <!-- <view class="time">{{item.passtime}}</view> -->
         </view>
       </view>
+      <!-- 发表的内容部分 -->
       <view class="itemContent">
         <view class="itemtext">{{item.content}}</view>
         <video custom-cache="{{false}}" src="{{item.origin_url}}"></video>
       </view>
+      <!-- 该内容获得的点赞、评论等部分 -->
       <view class="itemFooter">
         <view class="vote_up">
           <image src="../images/yes.png"></image>
           <text>{{item.votes.up}}</text>
         </view>
 
-        <!-- <view class="zf">
+        <view class="zf">
           <image src="../images/zf.png"></image>
-          <text>{{item.down}}</text>
+          <text>{{item.share_count}}</text>
 
-        </view> -->
+        </view>
         <view class="vote_down">
           <image src="../images/no.png"></image>
           <text>{{-item.votes.down}}</text>

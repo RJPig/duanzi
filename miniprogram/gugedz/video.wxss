@@ -37,7 +37,8 @@
   padding-bottom: 20rpx;
 }
 .listItem .itemContent video {
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
+  border-radius: 5%;
   width: 100%;
 }
 /* 段子下方的互动功能样式 */

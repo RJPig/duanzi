@@ -12,7 +12,18 @@
       </view>
       <view class="itemContent">
         <view class="itemtext">{{item.content}}</view>
-        <image mode="widthFix" src="{{item.origin_url}}"></image>
+        <!-- 判断用户发表的是多张图片还是单张图片 -->
+        <!-- 当不存在origin_url，即不是单张图片是，遍历组图并显示多张图片 -->
+        <view wx:if="{{!item.origin_url}}" class="img">
+          <!-- <block wx:for="{{item.attachments}}" wx:for-item="arr" wx:key="index"> -->
+            <image mode="widthFix" src="{{item.attachments[0].origin_url}}" bindtap="previewImg"></image>
+          <!-- </block> -->
+        </view>
+        <!-- 当存在origin_url，即用户发的是单张图片，则直接显示该图片 -->
+       <view wx:elif="{{item.origin_url}}" class="img">
+          <image mode="widthFix" src="{{item.origin_url}}" bindtap="previewImg"></image>
+        </view> 
+
       </view>
       
       <view class="itemFooter">
@@ -21,11 +32,11 @@
           <text>{{item.votes.up}}</text>
         </view>
 
-        <!-- <view class="zf">
+        <view class="zf">
           <image src="../images/zf.png"></image>
-          <text>{{item.down}}</text>
+          <text>{{item.share_count}}</text>
 
-        </view> -->
+        </view>
         <view class="vote_down">
           <image src="../images/no.png"></image>
           <text>{{-item.votes.down}}</text>
