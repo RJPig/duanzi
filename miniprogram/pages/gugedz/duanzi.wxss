@@ -1,4 +1,4 @@
-/* miniprogram/gugedz/duanzi.wxss */
+/* miniprogram/pages/gugedz/duanzi.wxss */
 
 .listItem {
   width: 750rpx;

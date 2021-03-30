@@ -1,4 +1,4 @@
-// miniprogram/gugedz/image.js
+// miniprogram/gugedz/duanzi.js
 Page({
 
   /**
@@ -6,7 +6,7 @@ Page({
    */
   data: {
     dzlist: [],
-    currentPage: 1
+    currentPage: 1,
   },
 
   /**
@@ -14,18 +14,26 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    wx.showLoading({
+      title: '正在加载.....',
+      icon: 'loading',
+      mask: true
+    })
     wx.cloud.callFunction({
-      name: "image",
+      name: "duanzi",
       data: {
         page: 1,
         count: 12,
-        // format: "image"
+        // format: "word"
       },
       success(res) {
-        console.log(res);
+        console.log(res.result.items);
         that.setData({
           dzlist:res.result.items
         })
+      },
+      complete: () => {
+        wx.hideLoading()
       }
     }
     )
@@ -70,6 +78,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function (event) {
+    // console.log(event);
     this.setData({
       currentPage: this.data.currentPage+1
     })
@@ -82,24 +91,32 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 封装函数
+  // 封装函数,当页面上拉触底时调用该函数
   getDz(page) {
     let that = this
+    wx.showLoading({
+      title: '正在加载....',
+      icon: 'loading',
+      mask: true
+    })
     wx.cloud.callFunction({
-      name: "image",
+      name: "duanzi",
       data: {
         page: page,
         count: 12,
-        // format: "image"
+        // format: "word"
       },
       success(res) {
-        console.log(res);
+        console.log(res.result.items);
         let arr = that.data.dzlist.concat(res.result.items)
         // console.log(arr);
         
         that.setData({
           dzlist: arr
         })
+      },
+      complete: () => {
+        wx.hideLoading()
       }
     }
     )

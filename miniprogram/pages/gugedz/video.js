@@ -1,4 +1,4 @@
-// miniprogram/gugedz/duanzi.js
+// miniprogram/gugedz/video.js
 Page({
 
   /**
@@ -14,18 +14,26 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    wx.showLoading({
+      title: '正在加载...',
+      icon: 'loading',
+      mask: true
+    })
     wx.cloud.callFunction({
-      name: "duanzi",
+      name: "video",
       data: {
         page: 1,
         count: 12,
-        // format: "word"
+        // format: "video"
       },
       success(res) {
         console.log(res.result.items);
         that.setData({
           dzlist:res.result.items
         })
+      },
+      complete: () => {
+        wx.hideLoading()
       }
     }
     )
@@ -70,7 +78,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function (event) {
-    // console.log(event);
     this.setData({
       currentPage: this.data.currentPage+1
     })
@@ -83,15 +90,20 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 封装函数,当页面上拉触底时调用该函数
+  // 封装函数
   getDz(page) {
     let that = this
+    wx.showLoading({
+      title: '正在加载...',
+      icon: 'loading',
+      mask: true
+    })
     wx.cloud.callFunction({
-      name: "duanzi",
+      name: "video",
       data: {
         page: page,
         count: 12,
-        // format: "word"
+        // format: "video"
       },
       success(res) {
         console.log(res.result.items);
@@ -101,6 +113,9 @@ Page({
         that.setData({
           dzlist: arr
         })
+      },
+      complete: () => {
+        wx.hideLoading()
       }
     }
     )

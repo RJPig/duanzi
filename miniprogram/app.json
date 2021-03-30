@@ -1,8 +1,8 @@
 {
   "pages": [
-    "gugedz/duanzi",
-    "gugedz/image",
-    "gugedz/video"
+    "pages/gugedz/duanzi",
+    "pages/gugedz/image",
+    "pages/gugedz/video"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -14,19 +14,19 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "gugedz/duanzi",
+        "pagePath": "pages/gugedz/duanzi",
         "text": "段子",
         "iconPath": "images/dz1.png",
         "selectedIconPath": "images/dz2.png"
       },
       {
-        "pagePath": "gugedz/image",
+        "pagePath": "pages/gugedz/image",
         "text": "图片",
         "iconPath": "images/ig1.png",
         "selectedIconPath": "images/ig2.png"
       },
       {
-        "pagePath": "gugedz/video",
+        "pagePath": "pages/gugedz/video",
         "text": "视频",
         "iconPath": "images/vi1.png",
         "selectedIconPath": "images/vi2.png"

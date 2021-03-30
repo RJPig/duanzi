@@ -1,4 +1,4 @@
-// miniprogram/gugedz/video.js
+// miniprogram/gugedz/image.js
 Page({
 
   /**
@@ -14,18 +14,26 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    wx.showLoading({
+      title: '正在加载...',
+      icon: 'loading',
+      mask: true
+    })
     wx.cloud.callFunction({
-      name: "video",
+      name: "image",
       data: {
         page: 1,
         count: 12,
-        // format: "video"
+        // format: "image"
       },
       success(res) {
-        // console.log(res);
+        console.log(res.result.items);
         that.setData({
           dzlist:res.result.items
         })
+      },
+      complete: () => {
+        wx.hideLoading()
       }
     }
     )
@@ -85,21 +93,29 @@ Page({
   // 封装函数
   getDz(page) {
     let that = this
+    wx.showLoading({
+      title: '正在加载...',
+      icon: 'loading',
+      mask: true
+    })
     wx.cloud.callFunction({
-      name: "video",
+      name: "image",
       data: {
         page: page,
         count: 12,
-        // format: "video"
+        // format: "image"
       },
       success(res) {
-        // console.log(res);
+        console.log(res.result.items);
         let arr = that.data.dzlist.concat(res.result.items)
         // console.log(arr);
         
         that.setData({
           dzlist: arr
         })
+      },
+      complete: () => {
+        wx.hideLoading()
       }
     }
     )

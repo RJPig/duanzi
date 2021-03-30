@@ -1,35 +1,29 @@
 <view class="container">
   <view class="list">
-    <view class="listItem" wx:for="{{dzlist}}" wx:key="index" data-id="{{item.sid}}" data-uid="item.uid">
+    <view class="listItem" wx:for="{{dzlist}}" wx:key="index" data-id="{{item.id}}" data-uid="item.user.id">
       <view class="itemHeader">
         <view class="headerimg">
-          <image src="{{item.user.thumb}}"></image>
+          <image src="{{item.user.medium}}"></image>
         </view>
-        <!-- 用户头像部分 -->
         <view class="text">
           <view class="username">{{item.user.login}}</view>
           <!-- <view class="time">{{item.passtime}}</view> -->
         </view>
       </view>
-      <!-- 发表的内容部分 -->
-      <view class="itemContent">
-        <view class="itemtext">{{item.content}}</view>
-        <video custom-cache="{{false}}" src="{{item.origin_url}}"></video>
-      </view>
-      <!-- 该内容获得的点赞、评论等部分 -->
+      <view class="itemContent">{{item.content}}</view>
       <view class="itemFooter">
         <view class="vote_up">
-          <image src="../images/yes.png"></image>
+          <image src="../../images/yes.png"></image>
           <text>{{item.votes.up}}</text>
         </view>
 
         <view class="zf">
-          <image src="../images/zf.png"></image>
+          <image src="../../images/zf.png"></image>
           <text>{{item.share_count}}</text>
 
         </view>
         <view class="vote_down">
-          <image src="../images/no.png"></image>
+          <image src="../../images/no.png"></image>
           <text>{{-item.votes.down}}</text>
 
         </view>
